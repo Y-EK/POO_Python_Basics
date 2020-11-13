@@ -17,6 +17,12 @@ class Employee:
         
         Employee.num_of_emps += 1
 
+    def __repr__(self):
+        return "Employee('{}', '{}', '{}')".format(self.fname, self.lname, self.pay)
+
+    def __str__(self):
+        return '{} - {}'.format(self.fullname(), self.email)
+
     # Object Methods
     def fullname(self):
         return '{} {}'.format(self.fname, self.lname)
