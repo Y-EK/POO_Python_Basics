@@ -7,6 +7,7 @@ class Employee:
     num_of_emps = 0
     raise_amount = 1.04
     
+    # Dunder Methods
     # contructor
     def __init__(self, fname, lname, pay):
         # instance variables
@@ -17,11 +18,22 @@ class Employee:
         
         Employee.num_of_emps += 1
 
+    # Object Representation: __str__, __repr__
     def __repr__(self):
         return "Employee('{}', '{}', '{}')".format(self.fname, self.lname, self.pay)
 
     def __str__(self):
         return '{} - {}'.format(self.fullname(), self.email)
+
+    # returns the sum of pays of two employees
+    # by using: print(emp_1 + emp_2)
+    def __add__(self, other):
+        return self.pay + other.pay
+        
+    # returns the length of the fullname of an employee 
+    # ex: print(len(emp_1))
+    def __len__(self):
+        return len(self.fullname())      
 
     # Object Methods
     def fullname(self):
