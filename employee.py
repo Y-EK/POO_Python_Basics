@@ -57,6 +57,14 @@ class Employee:
         fn, ln = name.split(' ')
         self.fname = fn
         self.lname = ln  
+        
+    # DELETER
+    # ex: del emp_1.fullname
+    @fullname.deleter
+    def fullname(self):
+        print('Delete Name!')
+        self.fname = None
+        self.lname = None 
 
     # Class methods
     @classmethod
