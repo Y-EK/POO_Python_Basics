@@ -35,7 +35,10 @@ class Employee:
         return len(self.fullname())      
 
     # Object Methods
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amount) 
 
+    # getter methods
     @property
     def email(self):
         return '{}.{}@mycompany.com'.format(self.fname, self.lname)
@@ -44,8 +47,16 @@ class Employee:
     def fullname(self):
         return '{} {}'.format(self.fname, self.lname)
 
-    def apply_raise(self):
-        self.pay = int(self.pay * self.raise_amount)   
+    # setter methods
+    @email.setter
+    def email(self, email):
+        pass
+
+    @fullname.setter
+    def fullname(self, name):
+        fn, ln = name.split(' ')
+        self.fname = fn
+        self.lname = ln  
 
     # Class methods
     @classmethod
