@@ -14,7 +14,6 @@ class Employee:
         self.fname = fname 
         self.lname = lname
         self.pay = pay
-        self.email = fname + '.' + lname + '@mycompany.com'
         
         Employee.num_of_emps += 1
 
@@ -36,6 +35,12 @@ class Employee:
         return len(self.fullname())      
 
     # Object Methods
+
+    @property
+    def email(self):
+        return '{}.{}@mycompany.com'.format(self.fname, self.lname)
+
+    @property
     def fullname(self):
         return '{} {}'.format(self.fname, self.lname)
 
