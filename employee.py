@@ -48,9 +48,6 @@ class Employee:
         return '{} {}'.format(self.fname, self.lname)
 
     # setter methods
-    @email.setter
-    def email(self, email):
-        pass
 
     @fullname.setter
     def fullname(self, name):
