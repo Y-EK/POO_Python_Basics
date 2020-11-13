@@ -14,8 +14,14 @@ class Employee:
         
         Employee.num_of_emps += 1
 
+    # Object Methods
     def fullname(self):
         return '{} {}'.format(self.fname, self.lname)
 
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amount)   
+
+    # Class methods
+    @classmethod
+    def set_raise_amt(cls, amount):
+        cls.raise_amount = amount
