@@ -1,3 +1,6 @@
+import datetime
+from datetime import date
+
 class Employee:
 
     # class attributes
@@ -25,3 +28,16 @@ class Employee:
     @classmethod
     def set_raise_amt(cls, amount):
         cls.raise_amount = amount
+
+    @classmethod
+    def from_string(cls, emp_str):
+        fname, lname, pay = emp_str.split('-')
+        return cls(fname, lname, pay)
+
+    # Static methods
+    @staticmethod
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        else:
+            return True
